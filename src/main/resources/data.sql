@@ -1,16 +1,3 @@
-CREATE TABLE POKEMON (
-                                id int8 NOT NULL,
-                                attack int4 NULL,
-                                defense int4 NULL,
-                                first_type varchar(255) NULL,
-                                hp int4 NULL,
-                                name varchar(255) NULL,
-                                second_type varchar(255) NULL,
-                                special_attack int4 NULL,
-                                speed int4 NULL,
-                                url_image varchar(255) NULL,
-                                CONSTRAINT POKEMON_pkey PRIMARY KEY (id)
-);
 
 INSERT INTO POKEMON (id,attack,defense,first_type,hp,name,second_type,special_attack,speed,url_image) VALUES
                                                                                                                  (1,49,49,'grass',45,'bulbasaur','poison',65,45,'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/POKEMON/other/home/1.png'),
