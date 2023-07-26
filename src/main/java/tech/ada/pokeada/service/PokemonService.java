@@ -1,5 +1,6 @@
 package tech.ada.pokeada.service;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import tech.ada.pokeada.dto.PokemonDTO;
@@ -38,7 +39,4 @@ public class PokemonService {
                         new PokemonNaoEncontradoException("Não encontrado pokemon de ID " + id)));
     }
 
-    public List<Pokemon> findPokemonsByTypes(List<String> types) {
-        return pokemonRepository.findByFirstTypeIgnoreCaseIn(types);
-    }
 }
