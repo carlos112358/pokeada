@@ -10,7 +10,19 @@ public class PokemonHomeParser {
         PokemonHomeDTO pokemonHomeDTO = new PokemonHomeDTO();
         pokemonHomeDTO.setId(pokemon.getId());
         pokemonHomeDTO.setImage(pokemon.getUrlImage());
-        pokemonHomeDTO.setName(pokemon.getName());
+        pokemonHomeDTO.setName(capitalizeString(pokemon.getName()));
+        pokemonHomeDTO.setType(pokemon.getFirstType());
         return pokemonHomeDTO;
+    }
+
+    private static String capitalizeString(String str) {
+       return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+    }
+
+    public static void main(String[] args) {
+
+        String abacate = "aBdxaseqwqas";
+        String s = capitalizeString(abacate);
+        System.out.println(s);
     }
 }

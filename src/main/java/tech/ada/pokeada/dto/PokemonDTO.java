@@ -8,6 +8,9 @@ public class PokemonDTO {
 
     private Integer attack;
 
+    private Integer specialAttack;
+
+    private Integer speed;
     private Integer hp;
 
     private Integer defense;
@@ -15,11 +18,6 @@ public class PokemonDTO {
     private String firstType;
 
     private String secondType;
-
-    private Integer specialAttack;
-
-    private Integer speed;
-
     private String urlImage;
 
     public Long getId() {
@@ -101,4 +99,6 @@ public class PokemonDTO {
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
+
+
 }

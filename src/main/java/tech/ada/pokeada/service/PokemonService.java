@@ -37,4 +37,8 @@ public class PokemonService {
                 .orElseThrow(() ->
                         new PokemonNaoEncontradoException("Não encontrado pokemon de ID " + id)));
     }
+
+    public List<Pokemon> findPokemonsByTypes(List<String> types) {
+        return pokemonRepository.findByFirstTypeIgnoreCaseIn(types);
+    }
 }
