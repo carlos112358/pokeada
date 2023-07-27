@@ -10,15 +10,23 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
  /*
  * Escreva as seguintes buscas utilizando query methods na interface PokemonRepository:
 
-        * Listar Pokémons que a defense maior que o valor informado.
-        * Listar Pokémons que o firstType entre uma lista de tipos informados.
-        * Listar Pokémons que o specialAttack está entre dois valores informados.
-        * Listar Pokémons que o specialAttack é maior ou igual que o valor informado.
+     * Listar Pokémons que a defense maior que o valor informado.*/
+     List<Pokemon> findByDefenceIsGreaterThan(Integer defense);
 
-    * Escreva também buscas utilizando query nativa na interface PokemonRepository:
+     //* Listar Pokémons que o firstType entre uma lista de tipos informados.
+     List<Pokemon> findByFirstTypeIn(List<String> types);
 
-    * Obter Pokémon pelo nome.
- * */
+     //* Listar Pokémons que o specialAttack está entre dois valores informados.
+     List<Pokemon> findBySpecialAttackBetween(Integer spAtkUnder, Integer spAtkOver);
+ 
+     //* Listar Pokémons que o specialAttack é maior ou igual que o valor informado.
+     List<Pokemon> findBySpecialAttackIsGreaterThanEqual(Integer spatk);
 
+    /* Escreva também buscas utilizando query nativa na interface PokemonRepository:
+
+    * Obter Pokémon pelo nome.*/
+
+    @Query(value = "SELECT * FROM POKEMON p WHERE p.name = :nome", nativeQuery = true)
+    Optional<Pokemon> findByNome(String nome);
 
 }
